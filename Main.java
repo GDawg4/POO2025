@@ -3,7 +3,7 @@ public class Main {
         Short modelo = 2025;
         Byte capacidadGasolina = 48;
         Float eficienciaGasolina = (Float)(float)11.0;
-        Integer kilometraje = 0;
+        Float kilometraje = 0f;
 
         Carro miCarro1 = new Carro(
             "Rojo", 
@@ -26,7 +26,10 @@ public class Main {
             eficienciaGasolina, 
             kilometraje
             );
-        System.out.println("Eficiencia 1:");
-        System.out.println(miCarro1.getEficienciaGasolina());
+        miCarro1.agregarGasolina(50f);
+        System.out.println(miCarro1.getGasolinaActual());
+        System.out.println(miCarro1.avanzar(400f));
+        System.out.println(miCarro1.getGasolinaActual());
+        System.out.println(miCarro1.getKilometraje());
     }
 }
