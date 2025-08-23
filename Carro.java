@@ -12,6 +12,7 @@ class Carro{
     private Float eficienciaGasolina; /* km/litro */
     private Float kilometraje;
     private Float gasolinaActual;
+    private Garaje garaje;
     /*
      * km/litro * 1/km = 1/litro
      */
@@ -35,6 +36,7 @@ class Carro{
             this.eficienciaGasolina = eficienciaGasolina;
             this.kilometraje = kilometraje;
             this.gasolinaActual = 0f;
+            this.garaje = null;
     }
 
     public Float getEficienciaGasolina(){
@@ -55,6 +57,15 @@ class Carro{
 
     protected Boolean setColor(String newColor){
         this.color = newColor;
+        return true;
+    }
+
+    protected Garaje getGaraje(){
+        return this.garaje;
+    }
+
+    protected Boolean setGaraje(Garaje nuevoGaraje){
+        this.garaje = nuevoGaraje;
         return true;
     }
 
@@ -116,6 +127,11 @@ class Carro{
             this.quitarGasolina(1/gasolinaAQuitar);
             return kmRealmenteAvanzados;
         }
+    }
+
+    @Override
+    public String toString() {
+        return this.marca + this.modelo;
     }
 
 }

@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args){
         Short modelo = 2025;
@@ -26,10 +29,10 @@ public class Main {
             eficienciaGasolina, 
             kilometraje
             );
-        miCarro1.agregarGasolina(50f);
-        System.out.println(miCarro1.getGasolinaActual());
-        System.out.println(miCarro1.avanzar(400f));
-        System.out.println(miCarro1.getGasolinaActual());
-        System.out.println(miCarro1.getKilometraje());
+        Garaje miGaraje = new Garaje("Garaje 1", 2);
+        ArrayList<Carro> carrosNuevos = new ArrayList<>(Arrays.asList(miCarro1, miCarro2));
+        miGaraje.agregarCarros(carrosNuevos, false);
+        miGaraje.verCarros();
+        
     }
 }
